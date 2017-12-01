@@ -1,0 +1,7 @@
+{
+  "name": "survey",
+  "version": "0.0.1",
+  "dependencies": {
+    "jQuery": "3.2.1"
+  }
+}

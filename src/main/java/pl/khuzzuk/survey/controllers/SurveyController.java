@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class SurveyController {
-    @RequestMapping("/logicTest")
+    @RequestMapping("/home")
     public String logicTestMainPage() {
         return "/logicTest.html";
     }
