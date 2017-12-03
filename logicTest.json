@@ -1,0 +1,26 @@
+{
+  "questions": [
+    {
+      "name": "q1",
+      "type": "radiogroup",
+      "title": "Wszystkie psy szczekają, Donald szczeka, czy donald jest psem?",
+      "colCount": 1,
+      "choices": [
+        "tak",
+        "nie"
+      ],
+      "isRequired": true
+    }, {
+      "name": "q2",
+      "type": "radiogroup",
+      "title": "Samolot leci z Warszawy do Londynu i spowrotem. Za pierwszym przelotem leciał bez wiatru. Za drugim przelotem w pierwszą stronę leciał pod wiatr, a w drugą z wiatrem.\n Jaki był czas drugiego przelotu?",
+      "colCount": 1,
+      "choices": [
+        "taki sam jak za pierwszym razem",
+        "dłuższy niż za pierwszym razem",
+        "krótszy niż za pierwszym razem"
+      ],
+      "isRequired": true
+    }
+  ]
+}
