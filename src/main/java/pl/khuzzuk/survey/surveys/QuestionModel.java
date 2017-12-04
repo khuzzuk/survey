@@ -1,15 +1,20 @@
 package pl.khuzzuk.survey.surveys;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class QuestionModel {
     private String name;
     private String type;
     private String title;
+    private String inputMask;
+    private String inputType;
     private int colCount;
     private List<String> choices;
+    private List<Validator> validators;
     private boolean isRequired;
 
     public QuestionModel() {
@@ -62,5 +67,29 @@ public class QuestionModel {
 
     public void setRequired(boolean isRequired) {
         this.isRequired = isRequired;
+    }
+
+    public String getInputMask() {
+        return inputMask;
+    }
+
+    public void setInputMask(String inputMask) {
+        this.inputMask = inputMask;
+    }
+
+    public String getInputType() {
+        return inputType;
+    }
+
+    public void setInputType(String inputType) {
+        this.inputType = inputType;
+    }
+
+    public List<Validator> getValidators() {
+        return validators;
+    }
+
+    public void setValidators(List<Validator> validators) {
+        this.validators = validators;
     }
 }
