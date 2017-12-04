@@ -9,9 +9,12 @@ import pl.khuzzuk.survey.surveys.SurveyPages;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @RestController
 public class SurveyRepo {
+    Logger logger = Logger.getLogger("name");
     @RequestMapping("/survey1")
     public SurveyPages getLogicTest() throws RemoteException {
         try {
@@ -19,6 +22,7 @@ public class SurveyRepo {
             return new ObjectMapper().readValue(resource.getInputStream(), SurveyPages.class);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.log(Level.SEVERE, "file not found");
             throw new RemoteException();
         }
     }
