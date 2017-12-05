@@ -1,7 +1,7 @@
 Survey.Survey.cssType = "bootstrap";
 Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
 
-$.ajax({url: "http://localhost:8080/survey1"})
+$.ajax({url: window.location.origin + "/survey1"})
     .then(function (json) {
         window.survey = new Survey.Model(json);
 
