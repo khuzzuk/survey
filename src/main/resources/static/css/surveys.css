@@ -1,0 +1,23 @@
+.btn-green {
+    background-color: #1ab394;
+    color: #fff;
+    border-radius: 3px;
+    margin: 15px 150px;
+}
+.btn-green:hover, .btn-green:focus {
+    background-color: #18a689;
+    color: #fff;
+}
+.panel-footer {
+    padding: 0 15px;
+    border:none;
+    text-align: left;
+    background-color: #fff;
+}
+.panel-body {
+    padding: 15px 150px;
+}
+.time-counter {
+    margin: 15px 150px;
+    border-radius: 3px;
+}

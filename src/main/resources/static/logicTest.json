@@ -27,7 +27,7 @@
             "tak",
             "nie"
           ],
-          "isRequired": true
+          "isRequired": false
         }, {
           "name": "q2",
           "type": "radiogroup",
@@ -38,9 +38,10 @@
             "dłuższy niż za pierwszym razem",
             "krótszy niż za pierwszym razem"
           ],
-          "isRequired": true
+          "isRequired": false
         }
       ]
     }
-  ]
+  ],
+  "completedHtml":"<h1>Dziękujemy za ukończenie testu.</h1>"
 }
