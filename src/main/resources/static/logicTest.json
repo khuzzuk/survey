@@ -30,6 +30,16 @@
           "isRequired": false
         }, {
           "name": "q2",
+          "type": "checkbox",
+          "title": "Wszystkie żaby rechoczą; wszystkie kaczki kwaczą; jeżeli ktoś kwacze, jest kaczką. Donald rechocze i kwacze. Co jest prawdą:",
+          "colCount": 1,
+          "choices": [
+            "Donald jest żabą",
+            "Donald jest kaczką"
+            ],
+          "isRequired": false
+        }, {
+          "name": "q3",
           "type": "radiogroup",
           "title": "Samolot leci z Warszawy do Londynu i spowrotem. Za pierwszym przelotem leciał bez wiatru. Za drugim przelotem w pierwszą stronę leciał pod wiatr, a w drugą z wiatrem.\n Jaki był czas drugiego przelotu?",
           "colCount": 1,
@@ -37,6 +47,18 @@
             "taki sam jak za pierwszym razem",
             "dłuższy niż za pierwszym razem",
             "krótszy niż za pierwszym razem"
+          ],
+          "isRequired": false
+        }, {
+          "name": "q4",
+          "type": "radiogroup",
+          "title": "Matka ma dwóch synów; ojciec ma dwóch synów; każdy syn ma dwie córki; dwóch synów ma jednego brata a jeden ma dwóch braci. Ile jest osób w rodzinie?",
+          "colCount": 1,
+          "choices": [
+            "5",
+            "8",
+            "11",
+            "14"
           ],
           "isRequired": false
         }

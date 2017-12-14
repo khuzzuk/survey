@@ -3,8 +3,9 @@ Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
 
 var timeElement = $("#timeElement");
 var progressBar = $("#progressbar");
+var timeForTest= 30*60;
 var timeSpent;
-var timeForTest= 0.1*60;
+var intervalId;
 
 function refreshTimer() {
     if (!timeElement) return;
@@ -12,7 +13,6 @@ function refreshTimer() {
 
     if (timeLeft <= 0) {
         survey.completeLastPage();
-        timeElement.hide();
     }
     var minutes = Math.floor(timeLeft / 60);
     var seconds = Math.floor(timeLeft % 60);
@@ -32,6 +32,12 @@ function timeCallback() {
     }
 }
 
+function finishSurvey() {
+    window.clearInterval(intervalId);
+    timeElement.hide();
+    progressBar.hide();
+}
+
 var doOnCurrentPageChanged = function() {
     survey.showPrevButton = false;
 };
@@ -44,9 +50,11 @@ $.ajax({url: window.location.origin + "/survey1"})
 
         window.survey = new Survey.Model(json);
         survey.onComplete.add(function (result) {
-            timeElement.hide();
-            progressBar.hide();
-            var jsonResult = JSON.stringify(result.data);
+            finishSurvey();
+            var surveyData = result.data;
+            surveyData.timeSpent = timeSpent;
+            surveyData.timeForTest = timeForTest;
+            var jsonResult = JSON.stringify(surveyData);
             $.ajax({
                 type: 'POST',
                 url: 'result',
@@ -61,5 +69,5 @@ $.ajax({url: window.location.origin + "/survey1"})
             model: survey,
             onCurrentPageChanged: doOnCurrentPageChanged
         });
-        window.setInterval(timer, 1000);
+        intervalId = window.setInterval(timer, 1000);
     });
